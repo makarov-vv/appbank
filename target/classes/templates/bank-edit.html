@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Банки</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+<div>
+    <a href="/">Главная страница</a>
+    <a href="/deposits">Вклады</a>
+    <a href="/banks">Банки</a>
+    <a href="/clients">Клиенты</a>
+</div>
+<div>
+    <h1>Редактирование банка</h1>
+    <div th:each="el:${bank}">
+        <form method="post">
+            <input type="text" name="name" th:value="${el.name}" placeholer="Введите наименование банка">
+            <input type="text" name="bik" th:value="${el.bik}" placeholder="Введите БИК">
+            <button type="submit">Обновить</button>
+        </form>
+    </div>
+
+</div>
+</body>
+</html>
